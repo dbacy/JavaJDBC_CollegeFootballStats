@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head lang="en">
+
+    <title>${Title}</title>
+</head>
+<body>
+<h2>Team Info</h2>
+<h4 th:text="'Team/s with Nickname like: ' +  ${nickName}"></h4>
+
+<table class ="table table-striped">
+    <tr>
+        <th>Team Name</th>
+        <th>Nickname</th>
+        <th>First Played</th>
+        <th>Conference</th>
+    </tr>
+    <tr th:each="team : ${teams}">
+        <td th:text="${team.name}">Team Name</td>
+        <td th:text="${team.nickName}">Nickname</td>
+        <td th:text="${team.firstPlayed}">First Played</td>
+        <td th:text="${team.conference}">Conference</td>
+    </tr>
+</table>
+</body>
+</html>
